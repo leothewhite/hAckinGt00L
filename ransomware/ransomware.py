@@ -2,6 +2,15 @@ import os
 import shutil
 from cryptography.fernet import Fernet
 
+
+def create_key():
+    with open('./key.txt', 'wb') as key_file:
+        key_file.write(Fernet.generate_key())
+
+
+if not os.path.exists('./key.txt'):
+    create_key()
+
 with open('./key.txt', 'rb') as key_file:
     key = key_file.read()
 
