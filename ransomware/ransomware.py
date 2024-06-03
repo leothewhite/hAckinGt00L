@@ -12,9 +12,6 @@ with open('./key.txt', 'rb') as key_file:
 
 f = Fernet(key)
 
-
-
-
 # recursive function to delete file including directories
 def delete_directories(now_path):
     objects = os.listdir(now_path)
